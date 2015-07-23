@@ -1,0 +1,205 @@
+#!/usr/bin/perl
+use LWP::UserAgent;
+no warnings 'uninitialized';
+$ua = LWP::UserAgent->new;
+$ua->agent("Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.1) Gecko/20090624 Firefox/3.5");
+$id2="$ARGV[0]";
+############################################################################
+#I.C.S.G Skype Resolver                                                    #
+#                                                                          #
+#Coded By WH!T3 W01F                                                       #
+#                                                                          #
+#Iran Cyber Security Group                                                 #
+#                                                                          #
+#Iran-Cyber.Org                                                            #
+#                                                                          #
+#Spc Tnx: root3r | MOHAMAD-NOFOZI | KamraN HellisH | JOK3R | Pi.Hack       # 
+############################################################################
+system(($^O eq 'MSWin32') ? 'cls' : 'clear');
+print q {
+ _____                          _____      _                   ____
+|_   _|                        / ____|    | |                 / __ \
+  | |  _ __ __ _ _ __  ______ | |    _   _| |__   ___ _ __   | |  | |_ __ __ _
+  | | | '__/ _` | '_ \|______|| |   | | | | '_ \ / _ \ '__|  | |  | | '__/ _` |
+  | |_| | | (_| | | | |       | |___| |_| | |_) |  __/ |  _  | |__| | | | (_| |
+|_____|_|  \__,_|_| |_|        \_____\__, |_.__/ \___|_| (_)  \____/|_|  \__, |
+                                      __/ |                                _/ |
+                                     |___/                               |___/
+
+};
+sleep(2);
+system(($^O eq 'MSWin32') ? 'cls' : 'clear');
+if (length $id2) {
+print "\n";
+print "\t   +=============================================================+\n";
+print "\t   |                   I.C.S.G Skype Resolver                    |\n";
+print "\t   |                     Author: WH!T3 W01F                      |\n";
+print "\t   |                       Iran-Cyber.Org                        |\n";
+print "\t   | Spc Tnx: root3r|MOHAMAD-NOFOZI|KamraN HellisH|JOK3R|Pi.Hack |\n";
+print "\t   +=============================================================+\n";
+print "\n";
+print "\n";
+################################################################
+print "Trying Server 1 => ";
+$ress= $ua->post("http://resolvethem.com",[
+                                'skypeUsername'   => $id2,
+                                'submit'       => 'Submit',
+                                ]);
+                                if ($ress->content =~ /<div id='resolve' class='alert alert-success'>(.*?)<center>/) {
+                                print "$1\n\n";
+                                }
+                                else
+                                {
+                                print "Failed\n\n";
+                                }
+################################################################
+print "Trying Server 2 => ";
+$ress2= $ua->post("http://mostwantedhf.info",[
+                                'skypeName'   => $id2,
+                                'resolve'       => 'Grab IP',
+                                ]);
+                                if ($ress2->content =~ /placeholder="Result" value="(.*?)"/) {
+                                print "$1\n\n";
+                                }
+                                else
+                                {
+                                print "Failed\n\n";
+                                }
+################################################################
+print "Trying Server 3 => ";
+$ress3= $ua->post("http://www.skresolver.com/index.php",[
+                                'skype'   => $id2,
+                                'resolveSkype'       => 'Grab IP Address Now!',
+                                ]);
+                                if ($ress3->content =~ /alt='Avatar'\/><\/a><br>(.*?)<br>(.*?)<\/center>/) {
+                                print "$1\n\nLocation (From Server 3) => $2\n\n";
+                                }
+                                else
+                                {
+                                print "Failed\n\n";
+                                }
+################################################################
+print "Trying Server 4 => ";
+$ress4= $ua->post("http://str3ssed.me/resolver/skyperesolver.php",[
+                                'username'   => $id2,
+                                'resolveusername'       => 'RESOLVE',
+                                ]);
+                                if ($ress4->content =~ /<h4><strong>Server 1:<\/strong> (.*?)<br\/>/) {
+                                print "$1\n\n";
+								print "Trying Server 5 => ";
+								if ($ress4->content =~ /<strong>Server 2:<\/strong> (.*?)<br\/>/) {
+								print "$1\n\n";
+								print "Trying Server 6 => ";
+								if ($ress4->content =~ /<strong>Server 3:<\/strong> (.*?)<br\/><br\/><\/h4>/) {
+								print "$1\n\n";
+								print "Information => ";
+								if ($ress4->content =~ /
+Country: <b>(.*?)<\/b><\/br>
+Region Name: <b> (.*?)<\/b><\/br>
+City: <b> (.*?)<\/b><\/br>
+ISP: <b> (.*?)<\/b><\/br>/) {
+								print "\n\nCountry : $1\n\n";
+								print "Region(State) : $2\n\n";
+								print "City : $3\n\n";
+								print "ISP : $4\n\n";
+								}		
+								}
+								}
+                                }
+                                else
+                                {
+                                print "Failed\n\n";
+                                }
+################################################################
+print "################################################\n\n";
+print "Finished.Don't Forget To Visit Iran-Cyber.Org ;)\n\n";
+}
+################################################################################################################################
+else {
+print "\n";
+print "\t   +=============================================================+\n";
+print "\t   |                  I.C.S.G Skype Resolver                     |\n";
+print "\t   |                     Author: WH!T3 W01F                      |\n";
+print "\t   |                       Iran-Cyber.Org                        |\n";
+print "\t   | Spc Tnx: root3r|MOHAMAD-NOFOZI|KamraN HellisH|JOK3R|Pi.Hack |\n";
+print "\t   +=============================================================+\n";
+print "\n";
+print "Type The ID Of Victim : ";
+$id=<STDIN>;
+chomp($id);
+print "\n";
+################################################################
+print "Trying Server 1 => ";
+$res= $ua->post("http://resolvethem.com",[
+                                'skypeUsername'   => $id,
+                                'submit'       => 'Submit',
+                                ]);
+                                if ($res->content =~ /<div id='resolve' class='alert alert-success'>(.*?)<center>/) {
+                                print "$1\n\n";
+                                }
+                                else
+                                {
+                                print "Failed\n\n";
+                                }
+################################################################
+print "Trying Server 2 => ";
+$res2= $ua->post("http://mostwantedhf.info",[
+                                'skypeName'   => $id,
+                                'resolve'       => 'Grab IP',
+                                ]);
+                                if ($res2->content =~ /placeholder="Result" value="(.*?)"/) {
+                                print "$1\n\n";
+                                }
+                                else
+                                {
+                                print "Failed\n\n";
+                                }
+################################################################
+print "Trying Server 3 => ";
+$res3= $ua->post("http://www.skresolver.com/index.php",[
+                                'skype'   => $id,
+                                'resolveSkype'       => 'Grab IP Address Now!',
+                                ]);
+                                if ($res3->content =~ /alt='Avatar'\/><\/a><br>(.*?)<br>(.*?)<\/center>/) {
+                                print "$1\n\nLocation (From Server 3) => $2\n\n";
+                                }
+                                else
+                                {
+                                print "Failed\n\n";
+                                }
+################################################################
+print "Trying Server 4 => ";
+$res4= $ua->post("http://str3ssed.me/resolver/skyperesolver.php",[
+                                'username'   => $id,
+                                'resolveusername'       => 'RESOLVE',
+                                ]);
+                                if ($res4->content =~ /<h4><strong>Server 1:<\/strong> (.*?)<br\/>/) {
+                                print "$1\n\n";
+								print "Trying Server 5 => ";
+								if ($res4->content =~ /<strong>Server 2:<\/strong> (.*?)<br\/>/) {
+								print "$1\n\n";
+								print "Trying Server 6 => ";
+								if ($res4->content =~ /<strong>Server 3:<\/strong> (.*?)<br\/><br\/><\/h4>/) {
+								print "$1\n\n";
+								print "Information => ";
+								if ($res4->content =~ /
+Country: <b>(.*?)<\/b><\/br>
+Region Name: <b> (.*?)<\/b><\/br>
+City: <b> (.*?)<\/b><\/br>
+ISP: <b> (.*?)<\/b><\/br>/) {
+								print "\n\nCountry : $1\n\n";
+								print "Region(State) : $2\n\n";
+								print "City : $3\n\n";
+								print "ISP : $4\n\n";
+								}		
+								}
+								}
+                                }
+                                else
+                                {
+                                print "Failed\n\n";
+                                }
+################################################################
+print "################################################\n\n";
+print "Finished.Don't Forget To Visit Iran-Cyber.Org ;)\n\n";
+}
